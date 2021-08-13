@@ -7,6 +7,7 @@ posts = [
         'content': 'First hardcoded post',
         'date_posted': 'Aug 12, 2021'
     },
+
     {
         'author': 'Shishir B',
         'title': 'Blog post 2',
