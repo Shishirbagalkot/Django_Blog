@@ -28,7 +28,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = (os.environ.get('DEBUG_VALUE') == True)
-DEBUG = True
+DEBUG = os.getenv('DEBUG_VALUE', False) == 'True'
+# DEBUG = True
 
 ALLOWED_HOSTS = ['django-tech-blog.herokuapp.com']
 
@@ -132,7 +133,6 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'blog-home'
@@ -140,5 +140,8 @@ LOGIN_URL = 'login'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 django_heroku.settings(locals())
