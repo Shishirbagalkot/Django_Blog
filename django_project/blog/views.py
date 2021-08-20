@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 from .models import *
 
 
@@ -8,6 +9,17 @@ def home(request):
         'title': "Home"
     }
     return render(request, 'blog/home.html', context)
+
+
+class PostListView(ListView):
+    model = Post
+    template_name = 'blog/home.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']  # order posts from newest to oldest
+
+
+class PostDetailView(DetailView):
+    model = Post
 
 
 def about(request):
