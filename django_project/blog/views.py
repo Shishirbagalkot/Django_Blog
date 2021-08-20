@@ -26,6 +26,10 @@ class PostCreateView(CreateView):
     model = Post
     fields = ['title', 'content']
 
+    def form_valid(self, form):  # overriding create form to refer to current user
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
 
 def about(request):
     context = {
