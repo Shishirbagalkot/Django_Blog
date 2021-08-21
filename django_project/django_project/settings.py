@@ -30,7 +30,7 @@ DEBUG = (os.environ.get('DEBUG_VALUE') == True)
 # DEBUG = os.getenv('DEBUG_VALUE', False) == 'True'
 # DEBUG = True
 
-ALLOWED_HOSTS = ['django-tech-blog.herokuapp.com']
+ALLOWED_HOSTS = ['technocrats-blog.herokuapp.com/']
 
 
 # Application definition
